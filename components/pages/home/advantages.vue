@@ -58,13 +58,15 @@ const advantagesIcons = [
         Advantages
       </h3>
       <div class="relative">
-        <div class="absolute top-[50px] left-0">
+        <div class="hidden s9:block absolute top-[50px] left-0">
           <img
             src="~/assets/images/curved-line.png"
             class="w-full object-cover object-center h-full"
           />
         </div>
-        <div class="grid grid-cols-6 gap-7">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 min-[1416px]:grid-cols-6 gap-7"
+        >
           <div
             v-for="(item, idx) in advantagesIcons"
             :key="idx"
@@ -88,7 +90,9 @@ const advantagesIcons = [
             </div>
           </div>
         </div>
-        <div class="absolute top-[600px] left-0">
+        <div
+          class="hidden s9:block min-[1416px]:hidden absolute top-[570px] left-0"
+        >
           <img
             src="~/assets/images/curved-line.png"
             class="w-full object-cover object-center h-full"
