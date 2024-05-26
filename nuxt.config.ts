@@ -1,5 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from 'vite-svg-loader'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/main.scss'],
@@ -29,4 +29,28 @@ export default defineNuxtConfig({
     plugins: [svgLoader({})],
   },
   modules: ['@nuxtjs/i18n'],
+  i18n: {
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      cookieDomain: '.forum.uz',
+      cookieKey: 'lang',
+    },
+    locales: [
+      {
+        code: 'ru',
+        file: 'ru.json',
+      },
+      {
+        code: 'uz',
+        file: 'uz.json',
+      },
+      {
+        code: 'en',
+        file: 'en.json',
+      },
+    ],
+    langDir: 'locales',
+    defaultLocale: 'ru',
+  },
 })

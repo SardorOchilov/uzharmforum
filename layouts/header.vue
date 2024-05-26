@@ -1,36 +1,5 @@
 <script setup lang="ts">
 import { Logo, Hamburger } from '~/assets/icons'
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-
-const { locale, setLocale, setLocaleCookie } = useI18n()
-
-const localDrop = ref(false)
-
-const selectedLanguage = computed(() => {
-  switch (locale.value) {
-    case 'ru':
-      return 'Ру'
-    case 'uz':
-      return "O'z"
-    default:
-      return 'Eng'
-  }
-})
-
-function changeLanguage(on: () => void, lang: string) {
-  setLocaleCookie(lang)
-  setLocale(lang)
-  on()
-}
-
-function toggleLocalDrop() {
-  localDrop.value = !localDrop.value
-}
-
-function closeLocalDrop() {
-  localDrop.value = false
-}
 </script>
 
 <template>
